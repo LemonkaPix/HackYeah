@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BasicGirrafe
   m_EditorClassIdentifier: 
   Name: Basic giraffe
-  Description: 50
-  cost: 0
+  Description: 
+  cost: 50
   HealthPoint: 25
   Damage: 5
   Speed: 2
+  prefab: {fileID: 7166315851184176235, guid: 5c343199d2e9da34d91c53db42a5b760, type: 3}

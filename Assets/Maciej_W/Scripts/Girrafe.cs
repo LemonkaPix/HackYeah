@@ -20,6 +20,7 @@ public class Girrafe : MonoBehaviour
     [SerializeField] SpriteRenderer bar;
     float lerpSpeed;
     [SerializeField] GameObject slider;
+    Animator anim;
 
     #region colliders
 
@@ -28,15 +29,18 @@ public class Girrafe : MonoBehaviour
         healthPoint = girrafeObject.HealthPoint;
         damage = girrafeObject.Damage;
         speed = girrafeObject.Speed;
+        anim = GetComponent<Animator>();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         onCollider = true;
         fightingGameObject = collision.gameObject;
+        anim.SetBool("IsAttacking", true);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        anim.SetBool("IsAttacking", false);
         onCollider = false;
     }
 

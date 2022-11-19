@@ -14,4 +14,6 @@ public class GirrafeObject : ScriptableObject
     public float Damage;
 
     public float Speed;
+
+    public GameObject prefab;
 }

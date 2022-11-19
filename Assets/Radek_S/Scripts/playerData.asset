@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0776bed3ff6b6b4d841652519f63806, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
-  currency: 12
+  currency: 33
   baseHealth: 100
   maxbaseHealth: 100
-  time: 4
+  time: 11
   upgrade: 0
   totalCurrency: 0
   totalBabyKilled: 0

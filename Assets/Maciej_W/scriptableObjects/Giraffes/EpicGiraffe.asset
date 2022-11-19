@@ -18,3 +18,4 @@ MonoBehaviour:
   HealthPoint: 50
   Damage: 10
   Speed: 2
+  prefab: {fileID: 2348556355377603416, guid: 285c0cd950ed69d4baa55eb5609815fe, type: 3}

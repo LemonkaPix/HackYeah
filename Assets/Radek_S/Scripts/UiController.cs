@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using System.Reflection;
 
 public class UiController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class UiController : MonoBehaviour
     int lastSecond = 0; 
     string correctedSeconds;
     bool isShifted = false;
+    bool buyDelay = true;
 
     void Start()
     {
@@ -125,7 +127,7 @@ public class UiController : MonoBehaviour
                     {
                          upgradeIndex = playerData.upgrade + 1;
                     }
-                    currentObject.Find("LvlText").GetComponent<TextMeshProUGUI>().text = $"Lvl. {playerData.upgrade + 1}";
+                    currentObject.Find("LvlText").GetComponent<TextMeshProUGUI>().text = (playerData.upgrade + 1 != 3) ? $"Lvl. {playerData.upgrade + 1}" : "Lvl. MAX";
                     text.text = $"{dataModule.GiraffeUPG[upgradeIndex].cost}";
                 }
             }
@@ -135,34 +137,22 @@ public class UiController : MonoBehaviour
 
     }
 
+    IEnumerator TroopIE(int index, int troopCost)
+    {
+        buyDelay = false;
 
-    public void troop1() {
-        int troopCost = girrafeObjects[0].cost;
-        if (playerData.currency < troopCost) return;
-        Instantiate(girrafeObjects[0], new Vector2(0, 0), Quaternion.identity);
+        playerData.currency -= troopCost;
+        Instantiate(girrafeObjects[index].prefab, new Vector2(-7.5f, -1.75f), Quaternion.identity);
+
+        yield return new WaitForSeconds(1);
+        buyDelay = true;
     }
 
-    public void troop2() {
-        int troopCost = girrafeObjects[1].cost;
-        if (playerData.currency < troopCost) return;
-        Instantiate(girrafeObjects[1], new Vector2(0, 0), Quaternion.identity);
+    public void troop(int index) 
+    {
+        int troopCost = girrafeObjects[index].cost;
+
+        if (buyDelay && playerData.currency >= troopCost) StartCoroutine(TroopIE(index, troopCost));
     }
 
-    public void troop3() {
-        int troopCost = girrafeObjects[2].cost;
-        if (playerData.currency < troopCost) return;
-        Instantiate(girrafeObjects[2], new Vector2(0, 0), Quaternion.identity);
-    }
-
-    public void troop4() {
-        int troopCost = girrafeObjects[3].cost;
-        if (playerData.currency < troopCost) return;
-        Instantiate(girrafeObjects[3], new Vector2(0, 0), Quaternion.identity);
-    }
-
-    public void troop5() {
-        int troopCost = girrafeObjects[4].cost;
-        if (playerData.currency < troopCost) return;
-        Instantiate(girrafeObjects[4], new Vector2(0, 0), Quaternion.identity);
-    }
 }
