@@ -33,5 +33,10 @@ public class PlayerData : ScriptableObject
 
     public int totalKingsKilled;
 
+    [Header("Settings")]
 
+    public bool Fullscreen;
+
+    public float volume;
+    public float maxVolume = 1;
 }
