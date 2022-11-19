@@ -61,6 +61,8 @@ public class Girrafe : MonoBehaviour
         ColorLerp();
         bar.transform.localScale = new Vector3(healthPoint / girrafeObject.HealthPoint, bar.transform.localScale.y, bar.transform.localScale.z);
         if (healthPoint != girrafeObject.HealthPoint) slider.SetActive(true);
+
+        if (transform.position.x > 11) Destroy(this.gameObject);
     }
     IEnumerator Attack()
     {

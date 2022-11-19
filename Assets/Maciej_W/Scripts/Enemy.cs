@@ -48,6 +48,8 @@ public class Enemy : MonoBehaviour
         }
         try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage * Time.deltaTime * 0.5f; }
         catch { }
+        try { fightingGameObject.GetComponent<Base>().playerData.baseHealth -= damage * Time.deltaTime * 0.5f; }
+        catch { }
 
         if (healthPoint <= 0) StartCoroutine(Die());
 
