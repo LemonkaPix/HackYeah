@@ -6,10 +6,24 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GirrafeObject girrafeObject;
+
+    public float healthPoint;
+    float damage;
+    float speed;
+
     GameObject fightingGameObject;
     bool onCollider;
+    bool attackDelay = true;
+    bool isDying = false;
     #region colliders
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void Awake()
+    {
+        healthPoint = girrafeObject.HealthPoint;
+        damage = girrafeObject.Damage;
+        speed = girrafeObject.Speed;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
     {
         onCollider = true;
         fightingGameObject = collision.gameObject;
@@ -20,18 +34,30 @@ public class Enemy : MonoBehaviour
         onCollider = false;
     }
 
-
     #endregion
     private void Update()
     {
-        if (!onCollider) transform.position -= new Vector3(Time.deltaTime * girrafeObject.Speed, 0);
-        else
+        if (!onCollider && !isDying) transform.position -= new Vector3(Time.deltaTime * speed, 0);
+        else if (attackDelay && onCollider && !isDying)
         {
-
+            StartCoroutine(Attack());
+            attackDelay = false;
         }
+
+        if (healthPoint <= 0) StartCoroutine(Die());
     }
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(1.5f);
+        try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage; }
+        catch { }
+        attackDelay = true;
+    }
+    IEnumerator Die()
+    {
+        isDying = true;
+        Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+        yield return new WaitForSeconds(1f);
+        Destroy(this.gameObject);
     }
 }

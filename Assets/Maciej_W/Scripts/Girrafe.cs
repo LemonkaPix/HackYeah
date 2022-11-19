@@ -7,13 +7,14 @@ public class Girrafe : MonoBehaviour
 {
     [SerializeField] GirrafeObject girrafeObject;
 
-    float healthPoint;
+    public float healthPoint;
     float damage;
     float speed;
 
     GameObject fightingGameObject;
     bool onCollider;
     bool attackDelay = true;
+    bool isDying = false;
     #region colliders
 
     private void Awake()
@@ -37,25 +38,28 @@ public class Girrafe : MonoBehaviour
     #endregion
     private void Update()
     {
-        if(!onCollider) transform.position += new Vector3(Time.deltaTime * girrafeObject.Speed,0);
-        else if (attackDelay)
+        if(!onCollider && !isDying) transform.position += new Vector3(Time.deltaTime * speed,0);
+        else if (attackDelay && onCollider && !isDying)
         {
             StartCoroutine(Attack());
             attackDelay = false;
         }
 
-        if (girrafeObject.HealthPoint <= 0) StartCoroutine(Die());
+        if (healthPoint <= 0) StartCoroutine(Die());
     }
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(1.5f);
-        fightingGameObject.GetComponent<Enemy>().girrafeObject.HealthPoint -= girrafeObject.Damage;
+        try
+        { fightingGameObject.GetComponent<Enemy>().healthPoint -= damage; }
+        catch { }
         attackDelay = true;
-        Debug.Log("ATTACK");
     }
     IEnumerator Die()
     {
-        yield return new WaitForSeconds(1);
+        isDying = true;
+        Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
 }

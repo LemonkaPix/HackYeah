@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: 
   Description: 
   cost: 0
-  HealthPoint: 1
-  Damage: 0
-  Speed: 0
+  HealthPoint: 20
+  Damage: 10
+  Speed: 2
