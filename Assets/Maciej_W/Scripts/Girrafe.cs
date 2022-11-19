@@ -23,7 +23,7 @@ public class Girrafe : MonoBehaviour
         damage = girrafeObject.Damage;
         speed = girrafeObject.Speed;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         onCollider = true;
         fightingGameObject = collision.gameObject;
@@ -44,22 +44,23 @@ public class Girrafe : MonoBehaviour
             StartCoroutine(Attack());
             attackDelay = false;
         }
+        try
+        { fightingGameObject.GetComponent<Enemy>().healthPoint -= damage * Time.deltaTime * 0.5f; }
+        catch { }
+
 
         if (healthPoint <= 0) StartCoroutine(Die());
     }
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(1.5f);
-        try
-        { fightingGameObject.GetComponent<Enemy>().healthPoint -= damage; }
-        catch { }
         attackDelay = true;
     }
     IEnumerator Die()
     {
         isDying = true;
         Destroy(this.gameObject.GetComponent<BoxCollider2D>());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         Destroy(this.gameObject);
     }
 }

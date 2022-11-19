@@ -43,21 +43,21 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Attack());
             attackDelay = false;
         }
+        try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage * Time.deltaTime * 0.5f; }
+        catch { }
 
         if (healthPoint <= 0) StartCoroutine(Die());
     }
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(1.5f);
-        try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage; }
-        catch { }
         attackDelay = true;
     }
     IEnumerator Die()
     {
         isDying = true;
         Destroy(this.gameObject.GetComponent<BoxCollider2D>());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         Destroy(this.gameObject);
     }
 }
