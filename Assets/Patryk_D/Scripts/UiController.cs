@@ -2,34 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class UiController : MonoBehaviour
 {
 
     [SerializeField] GirrafeObject[] girrafeObjects;
-
+    [SerializeField] PlayerData playerData;
     public int currentMoney;
-    public GameObject timer;
+    [SerializeField] GameObject timer;
+    [SerializeField] GameObject coinsNumber;
     System.TimeSpan roundTime = new System.TimeSpan(0, 0, 0); //clock
-    private int lastSecond = 0; //pomocna zmienna do update'owania timera co sekunde
-    private string correctedSeconds;
+    int lastSecond = 0; //pomocna zmienna do update'owania timera co sekunde
+    string correctedSeconds;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - 1 >= lastSecond) {
+        if (Time.time - 1 >= lastSecond) { //funkcja odpala sie co sekunde
             lastSecond = Mathf.FloorToInt(Time.time);
             roundTime = roundTime.Add(new System.TimeSpan(0, 0, 1));
         }
-        correctedSeconds = System.Convert.ToString(roundTime.Seconds).Length < 2 ?
-            "0" + roundTime.Seconds : System.Convert.ToString(roundTime.Seconds);
-        timer.GetComponent<TMP_Text>().text = System.Convert.ToString(
-                roundTime.Minutes + ":" + correctedSeconds);
+        correctedSeconds = Convert.ToString(roundTime.Seconds).Length < 2 ?
+            "0" + roundTime.Seconds : Convert.ToString(roundTime.Seconds); //Dodaje 0 do sekund gdy jest to potrzebne
+        timer.GetComponent<TMP_Text>().text = Convert.ToString(
+                roundTime.Minutes + ":" + correctedSeconds); //aktualizacja textu timera
+
+
+        int time = Convert.ToInt32(roundTime.Minutes * 60 + roundTime.Seconds);
+        playerData.time = time;//updatuje playerData(time)
+
+
+        coinsNumber.GetComponent<TMP_Text>().text = Convert.ToString(playerData.currency);
     }
 
     public void upgrade() {
@@ -37,10 +42,6 @@ public class UiController : MonoBehaviour
     }
 
     public void pause() {
-        if (Time.timeScale == 1)
-        Time.timeScale = 0;
-        else
-        Time.timeScale = 1;
     }
 
     public void troop1() {
