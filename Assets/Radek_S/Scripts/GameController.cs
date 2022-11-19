@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    DataModule dataModule;
+    [SerializeField] DataModule dataModule;
     [SerializeField] PlayerData playerData;
     bool active = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        dataModule = GetComponent<DataModule>();
-    }
 
 
     IEnumerator PassiveIncome()

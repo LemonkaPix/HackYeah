@@ -92,16 +92,18 @@ public class DataModule : MonoBehaviour
     {
         new GiraffeUPG(0),
         new GiraffeUPG(100),
-        new GiraffeUPG(160)
+        new GiraffeUPG(200),
+        new GiraffeUPG(200)
+
     };
 
 
-    public List<GiraffeSpells> GiraffeSpells = new List<GiraffeSpells>
+    public List<GiraffeSpells> GiraffeSpells = new List<GiraffeSpells> // damage, cost, cooldown
     {
         new GiraffeSpells(30, 100, 60)
     };
 
-    public List<List<GiraffeTypes>> GiraffeUpgrades = new List<List<GiraffeTypes>> { };
+    public List<List<GiraffeTypes>> GiraffeUpgrades = new List<List<GiraffeTypes>> { }; // health, damage, speed, cost, unlock
 
     List<GiraffeTypes> GiraffeBase = new List<GiraffeTypes>()
     {
@@ -130,7 +132,7 @@ public class DataModule : MonoBehaviour
         new GiraffeTypes(75, 14, 2, 200, 120),
     };
 
-    public List<List<LionTypes>> LionUpgrades = new List<List<LionTypes>>{};
+    public List<List<LionTypes>> LionUpgrades = new List<List<LionTypes>>{}; // health, damage, speed, spawnrate
 
     List<LionTypes> LionBase = new List<LionTypes>()
     {
