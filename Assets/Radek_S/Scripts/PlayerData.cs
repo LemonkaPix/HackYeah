@@ -16,7 +16,7 @@ public class PlayerData : ScriptableObject
     public float maxbaseHealth = 100;
 
     public int time;
-
+    
     public int upgrade;
 
 
