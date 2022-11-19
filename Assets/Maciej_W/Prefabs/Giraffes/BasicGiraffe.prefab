@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7166315851184176232}
   - component: {fileID: 7166315851184176236}
   - component: {fileID: 7166315851184176239}
+  - component: {fileID: 918590552}
   m_Layer: 6
   m_Name: BasicGiraffe
   m_TagString: Untagged
@@ -156,6 +157,26 @@ MonoBehaviour:
   healthPoint: 0
   bar: {fileID: 7166315852066000234}
   slider: {fileID: 7166315851758702324}
+--- !u!95 &918590552
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166315851184176235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad11ab489e51c684aa28a86bb14cba14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7166315851758702324
 GameObject:
   m_ObjectHideFlags: 0
