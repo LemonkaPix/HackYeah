@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     bool onCollider;
     bool attackDelay = true;
     bool isDying = false;
+    [SerializeField] SpriteRenderer bar;
+    float lerpSpeed;
+    [SerializeField] GameObject slider;
     #region colliders
 
     private void Awake()
@@ -47,6 +50,11 @@ public class Enemy : MonoBehaviour
         catch { }
 
         if (healthPoint <= 0) StartCoroutine(Die());
+
+        lerpSpeed = 3f * Time.deltaTime;
+        bar.transform.localScale = new Vector3(healthPoint / girrafeObject.HealthPoint, bar.transform.localScale.y, bar.transform.localScale.z);
+        ColorLerp();
+        if (healthPoint != girrafeObject.HealthPoint) slider.SetActive(true);
     }
     IEnumerator Attack()
     {
@@ -60,4 +68,14 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0f);
         Destroy(this.gameObject);
     }
+
+
+    void ColorLerp()
+    {
+        Color hpColor = Color.Lerp(Color.red, Color.green, healthPoint / girrafeObject.HealthPoint);
+
+        bar.color = hpColor;
+    }
+
+
 }

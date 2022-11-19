@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Girrafe : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class Girrafe : MonoBehaviour
     bool attackDelay = true;
     bool isDying = false;
     [SerializeField] SpriteRenderer bar;
-    [SerializeField] SpriteRenderer slider;
     float lerpSpeed;
+    [SerializeField] GameObject slider;
+
     #region colliders
 
     private void Awake()
@@ -56,9 +58,9 @@ public class Girrafe : MonoBehaviour
         if (healthPoint <= 0) StartCoroutine(Die());
 
         lerpSpeed = 3f * Time.deltaTime;
-        HealthBarLerp();
         ColorLerp();
-
+        bar.transform.localScale = new Vector3(healthPoint / girrafeObject.HealthPoint, bar.transform.localScale.y, bar.transform.localScale.z);
+        if (healthPoint != girrafeObject.HealthPoint) slider.SetActive(true);
     }
     IEnumerator Attack()
     {
@@ -73,16 +75,8 @@ public class Girrafe : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void HealthBarLerp()
-    {
-        float startHealth = slider.transform.localScale.x;
-
-        slider.transform.localScale = new Vector3(Mathf.Lerp(startHealth, healthPoint / girrafeObject.HealthPoint, lerpSpeed), slider.transform.localScale.y, slider.transform.localScale.z);
-    }
-
     void ColorLerp()
     {
-
         Color hpColor = Color.Lerp(Color.red, Color.green, healthPoint / girrafeObject.HealthPoint);
 
         bar.color = hpColor;
