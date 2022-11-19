@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public GirrafeObject girrafeObject;
 
-    public float healthPoint;
+    [HideInInspector] public float healthPoint;
     float damage;
     float speed;
 
