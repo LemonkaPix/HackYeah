@@ -36,7 +36,6 @@ public class GameController : MonoBehaviour
     IEnumerator Defeat()
     {
         isDefat = false;
-        Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(0);
     }
 }

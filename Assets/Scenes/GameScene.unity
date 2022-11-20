@@ -1224,6 +1224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 362111b6b758b3c45ba7fdd1c1720058, type: 2}
+  uiController: {fileID: 3307685338523025403}
+  score: {fileID: 8587559750478698408}
 --- !u!114 &1936012070
 MonoBehaviour:
   m_ObjectHideFlags: 0

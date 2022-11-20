@@ -19,7 +19,7 @@ public class UiController : MonoBehaviour
     [SerializeField] GameObject PopUp;
     [SerializeField] Image bird;
     DataModule dataModule;
-    System.TimeSpan roundTime = new System.TimeSpan(0, 0, 0); 
+    public System.TimeSpan roundTime = new System.TimeSpan(0, 0, 0); 
     int lastSecond = 0; 
     string correctedSeconds;
     bool isShifted = false;
