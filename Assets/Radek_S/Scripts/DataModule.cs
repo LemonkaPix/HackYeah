@@ -108,28 +108,28 @@ public class DataModule : MonoBehaviour
     List<GiraffeTypes> GiraffeBase = new List<GiraffeTypes>()
     {
         new GiraffeTypes(10, 2, 4, 30, 0),
-        new GiraffeTypes(25, 5, 2, 50, 40),
+        new GiraffeTypes(24, 5, 2, 50, 40),
         new GiraffeTypes(35, 5, 3, 70, 60),
-        new GiraffeTypes(60, 2, 1, 100, 80),
+        new GiraffeTypes(60, 1, 1, 100, 80),
         new GiraffeTypes(50, 10, 2, 150, 120),
     };
 
     List<GiraffeTypes> GiraffeUPG1 = new List<GiraffeTypes>()
     {
-        new GiraffeTypes(13, 2, 4, 40, 0),
-        new GiraffeTypes(26, 6, 2, 60, 40),
-        new GiraffeTypes(40, 5, 3, 90, 60),
-        new GiraffeTypes(70, 1, 1, 120, 80),
-        new GiraffeTypes(65, 12, 2, 180, 120)
+        new GiraffeTypes(13, 2, 4, 30, 0),
+        new GiraffeTypes(26, 6, 2, 50, 40),
+        new GiraffeTypes(40, 5, 3, 70, 60),
+        new GiraffeTypes(70, 1, 1, 100, 80),
+        new GiraffeTypes(65, 12, 2, 150, 120)
     };
 
     List<GiraffeTypes> GiraffeUPG2 = new List<GiraffeTypes>()
     {
-        new GiraffeTypes(16, 3, 4, 60, 0),
-        new GiraffeTypes(26, 6, 2, 60, 40),
-        new GiraffeTypes(40, 5, 3, 90, 60),
-        new GiraffeTypes(70, 1, 1, 120, 80),
-        new GiraffeTypes(75, 14, 2, 200, 120),
+        new GiraffeTypes(16, 3, 4, 30, 0),
+        new GiraffeTypes(30, 7, 2, 50, 40),
+        new GiraffeTypes(45, 6, 3, 70, 60),
+        new GiraffeTypes(90, 2, 2, 100, 80),
+        new GiraffeTypes(75, 14, 2, 150, 120),
     };
 
     public List<List<LionTypes>> LionUpgrades = new List<List<LionTypes>>{}; // health, damage, speed, spawnrate
@@ -179,7 +179,7 @@ public class DataModule : MonoBehaviour
         new LionTypes(85, 16, 2, 20)
     };
 
-    void Start() // Adding objects
+    void Awake() // Adding objects
     {
         LionUpgrades.Add(LionBase);
         LionUpgrades.Add(LionUPG1);

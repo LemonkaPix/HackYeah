@@ -14,12 +14,14 @@ public class UiController : MonoBehaviour
     [SerializeField] GameObject timer;
     [SerializeField] GameObject coinsNumber;
     [SerializeField] GameObject Footer;
+    [SerializeField] Image bird;
     DataModule dataModule;
     System.TimeSpan roundTime = new System.TimeSpan(0, 0, 0); 
     int lastSecond = 0; 
     string correctedSeconds;
     bool isShifted = false;
     bool buyDelay = true;
+    bool birdfly = false;
 
     void Start()
     {
@@ -31,7 +33,6 @@ public class UiController : MonoBehaviour
 
 
         List<GiraffeTypes> currentGiraffeUpgrade = dataModule.GiraffeUpgrades[currentUpgrade];
-        Debug.Log(dataModule.GiraffeUpgrades.Count);
         Button[] footerChildren = Footer.GetComponentsInChildren<Button>();
         for (int i = 0; i < footerChildren.Length; i++)
         {
@@ -68,6 +69,7 @@ public class UiController : MonoBehaviour
 
 
         coinsNumber.GetComponent<TMP_Text>().text = $"Giraffe coins: {Convert.ToString(playerData.currency)}";
+        if (!birdfly) StartCoroutine(Bird_Fly());
     }
 
 
@@ -135,6 +137,23 @@ public class UiController : MonoBehaviour
 
         }
 
+    }
+
+    IEnumerator Bird_Fly()
+    {
+        System.Random rand = new();
+        Animator anim = bird.GetComponent<Animator>();
+
+        birdfly = true;
+        yield return new WaitForSeconds(rand.Next(10, 12));
+
+        int rand_y = rand.Next(-100, 200);
+        bird.transform.position = new Vector3(1170f, bird.transform.position.y + rand_y, bird.transform.position.z);
+
+        anim.Play("birdMove", 1);
+        yield return new WaitForSeconds(25);
+
+        birdfly = false;
     }
 
     IEnumerator TroopIE(int index, int troopCost)

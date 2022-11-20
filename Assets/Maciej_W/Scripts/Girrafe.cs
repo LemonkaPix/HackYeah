@@ -8,8 +8,10 @@ using UnityEngine.UIElements;
 public class Girrafe : MonoBehaviour
 {
     [SerializeField] GirrafeObject girrafeObject;
+    [SerializeField] PlayerData playerData;
+    [SerializeField] DataModule dataModule;
 
-    [HideInInspector] public float healthPoint;
+    public float healthPoint;
     float damage;
     float speed;
 
@@ -26,10 +28,10 @@ public class Girrafe : MonoBehaviour
 
     private void Awake()
     {
-        healthPoint = girrafeObject.HealthPoint;
-        damage = girrafeObject.Damage;
-        speed = girrafeObject.Speed;
-        anim = GetComponent<Animator>();
+        List<GiraffeTypes> currentGiraffeUpgrade = dataModule.GiraffeUpgrades[playerData.upgrade];
+        healthPoint = currentGiraffeUpgrade[girrafeObject.index].health;
+        damage = currentGiraffeUpgrade[girrafeObject.index].damage;
+        speed = currentGiraffeUpgrade[girrafeObject.index].speed;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {

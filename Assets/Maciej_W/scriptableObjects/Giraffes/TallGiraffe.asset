@@ -19,3 +19,4 @@ MonoBehaviour:
   Damage: 5
   Speed: 3
   prefab: {fileID: 2717458904502163306, guid: e4c1b68e51aec034ba0bd7b1fd62a360, type: 3}
+  index: 2

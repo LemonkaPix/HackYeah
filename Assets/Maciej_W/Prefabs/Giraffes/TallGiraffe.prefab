@@ -97,6 +97,8 @@ GameObject:
   - component: {fileID: 1468292911558983449}
   - component: {fileID: 1460543991603771892}
   - component: {fileID: 3588310296818534051}
+  - component: {fileID: 867865676}
+  - component: {fileID: 3215937110706344270}
   m_Layer: 6
   m_Name: TallGiraffe
   m_TagString: Untagged
@@ -237,9 +239,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   girrafeObject: {fileID: 11400000, guid: bf567ef223de3054a9bfe0098f929523, type: 2}
+  playerData: {fileID: 11400000, guid: 362111b6b758b3c45ba7fdd1c1720058, type: 2}
+  dataModule: {fileID: 3215937110706344270}
   healthPoint: 0
   bar: {fileID: 6183259349832193117}
   slider: {fileID: 4206756076049856765}
+--- !u!95 &867865676
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717458904502163306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd619e7f9d2fca64db7b16dbd3fef0cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3215937110706344270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717458904502163306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17933cdc05c6f64b9cee886b9c19234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4206756076049856765
 GameObject:
   m_ObjectHideFlags: 0

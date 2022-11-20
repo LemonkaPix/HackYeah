@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01a1c4b3b2d3a6743b223135386b7abe
+guid: 1b49afd2777bb06478601d0fee89a641
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: all_normal_grf_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 708
+        width: 434
+        height: 690
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4fd8033bfbba04db12986f5f039958
+      internalID: -1065736360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: all_normal_grf_1
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 712
+        width: 469
+        height: 690
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5df44b87f64327498097c80b48ce09e
+      internalID: 2058948338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: all_normal_grf_3
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 733
+        width: 439
+        height: 671
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac739681fad149d4d9666382e60adae4
+      internalID: -1990366870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: all_normal_grf_4
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 720
+        width: 422
+        height: 697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a8c9bd0f6987b40beb3f343e6eb940
+      internalID: -1992491376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: all_normal_grf_5
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 679
+        width: 432
+        height: 735
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977be54d4ea1cae438df1ad50f24b6cc
+      internalID: -1574272250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      all_normal_grf_2: -707077781
+      all_normal_grf_3: -1990366870
+      all_normal_grf_1: 2058948338
+      all_normal_grf_0: -1065736360
+      all_normal_grf_4: -1992491376
+      all_normal_grf_5: -1574272250
+      all_normal_grf_6: 455565342
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

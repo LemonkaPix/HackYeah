@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7166315851184176236}
   - component: {fileID: 7166315851184176239}
   - component: {fileID: 918590552}
+  - component: {fileID: 6152936296702095899}
   m_Layer: 6
   m_Name: BasicGiraffe
   m_TagString: Untagged
@@ -30,8 +31,8 @@ RectTransform:
   m_GameObject: {fileID: 7166315851184176235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.2}
-  m_LocalScale: {x: 0.19, y: 0.19, z: 0.2923077}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.38999996, y: 0.38999996, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7166315851758702325}
   m_Father: {fileID: 0}
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1b9a62a540aa0654d9b75250e82fcf31, type: 3}
+  m_Sprite: {fileID: -1065736360, guid: 1b49afd2777bb06478601d0fee89a641, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,18 +108,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.83, y: 0.24}
+  m_Offset: {x: 0, y: 0.92}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18.9, y: 14.17}
+    oldSize: {x: 4.3399997, y: 6.9019303}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.59, y: 10.99}
+  m_Size: {x: 3.9, y: 5.54}
   m_EdgeRadius: 0
 --- !u!50 &7166315851184176236
 Rigidbody2D:
@@ -154,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   girrafeObject: {fileID: 11400000, guid: 5db6bc83f4a4ebe4da903463af992d17, type: 2}
+  playerData: {fileID: 11400000, guid: 362111b6b758b3c45ba7fdd1c1720058, type: 2}
+  dataModule: {fileID: 6152936296702095899}
   healthPoint: 0
   bar: {fileID: 7166315852066000234}
   slider: {fileID: 7166315851758702324}
@@ -177,6 +180,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6152936296702095899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166315851184176235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17933cdc05c6f64b9cee886b9c19234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7166315851758702324
 GameObject:
   m_ObjectHideFlags: 0
