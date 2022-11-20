@@ -6,18 +6,20 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GirrafeObject girrafeObject;
+    [SerializeField] PlayerData playerData;
+    [SerializeField] DataModule dataModule;
 
-    [HideInInspector] public float healthPoint;
-    float damage;
-    float speed;
-
+    public float healthPoint;
+    public float damage;
+    public float speed;
+    float lerpSpeed;
     GameObject fightingGameObject;
     bool onCollider;
     bool attackDelay = true;
     bool isDying = false;
     [SerializeField] SpriteRenderer bar;
-    float lerpSpeed;
     [SerializeField] GameObject slider;
+    Animator anim;
     #region colliders
 
     private void Awake()
@@ -25,15 +27,18 @@ public class Enemy : MonoBehaviour
         healthPoint = girrafeObject.HealthPoint;
         damage = girrafeObject.Damage;
         speed = girrafeObject.Speed;
+        anim = GetComponent<Animator>();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         onCollider = true;
         fightingGameObject = collision.gameObject;
+        anim.SetBool("IsAttacking", true);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        anim.SetBool("IsAttacking", false);
         onCollider = false;
     }
 
@@ -46,10 +51,12 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Attack());
             attackDelay = false;
         }
-        try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage * Time.deltaTime * 0.5f; }
-        catch { }
         try { fightingGameObject.GetComponent<Base>().playerData.baseHealth -= damage * Time.deltaTime * 0.5f; }
-        catch { }
+        catch {
+            try { fightingGameObject.GetComponent<Girrafe>().healthPoint -= damage * Time.deltaTime * 0.5f; }
+        catch {
+        }
+ }
 
         if (healthPoint <= 0) StartCoroutine(Die());
 
@@ -65,6 +72,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator Die()
     {
+        playerData.currency += 10;
         isDying = true;
         Destroy(this.gameObject.GetComponent<BoxCollider2D>());
         yield return new WaitForSeconds(0f);

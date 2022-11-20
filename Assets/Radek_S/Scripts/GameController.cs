@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] DataModule dataModule;
     [SerializeField] PlayerData playerData;
     bool active = false;
+    bool isDefat = true;
 
 
     IEnumerator PassiveIncome()
@@ -31,5 +32,13 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if(!active) StartCoroutine(PassiveIncome());
+        if(playerData.baseHealth <= 0 && isDefat) StartCoroutine(Defeat());
+    }
+
+    IEnumerator Defeat()
+    {
+        isDefat = false;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(0);
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8518193982114295673}
   - component: {fileID: 4120773071032242239}
   - component: {fileID: 4109578382498444988}
+  - component: {fileID: 8870685383529517893}
   m_Layer: 7
   m_Name: KingLion
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715548126271041572}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.87, y: 0, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 2}
   m_ConstrainProportionsScale: 1
@@ -126,9 +127,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   girrafeObject: {fileID: 11400000, guid: 680979575a4591148b689003a29beef2, type: 2}
+  playerData: {fileID: 11400000, guid: 362111b6b758b3c45ba7fdd1c1720058, type: 2}
+  dataModule: {fileID: 8870685383529517893}
   healthPoint: 0
   bar: {fileID: 5091510850491272317}
   slider: {fileID: 3995308635577962608}
+--- !u!114 &8870685383529517893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715548126271041572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17933cdc05c6f64b9cee886b9c19234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2139406725712246257
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7862510099990416121}
   - component: {fileID: 7862510099990416120}
   - component: {fileID: 7862510099990416127}
+  - component: {fileID: 8236528580157654869}
   m_Layer: 7
   m_Name: BabyLion
   m_TagString: Untagged
@@ -126,9 +127,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   girrafeObject: {fileID: 11400000, guid: be8fc707db2799d4b8b073e7d9e88bdf, type: 2}
+  playerData: {fileID: 11400000, guid: 362111b6b758b3c45ba7fdd1c1720058, type: 2}
+  dataModule: {fileID: 8236528580157654869}
   healthPoint: 0
   bar: {fileID: 7862510100582147118}
   slider: {fileID: 7862510100774624212}
+--- !u!114 &8236528580157654869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862510099990416123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17933cdc05c6f64b9cee886b9c19234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7862510100582147112
 GameObject:
   m_ObjectHideFlags: 0
