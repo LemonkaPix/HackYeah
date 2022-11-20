@@ -255,8 +255,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
-  m_sharedMaterial: {fileID: -1658477906970328267, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -455,8 +455,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
-  m_sharedMaterial: {fileID: -1658477906970328267, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -588,11 +588,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "maciej wr\xF3bel\nradek sowa\n\n\nMicha\u0142 hospod\n\n\nKacper pli\u015B\n\n\nkrzysztof
-    kr\xF3wka\npatryk duda\n\n\ncampfire font\nlemonmilk font\n\n\nunity\nsoundtrap\nsoundly\n\n\n\n\n\n"
+  m_text: "Maciej Wr\xF3bel\nRadek Sowa\n\n\nMicha\u0142 Hospod\n\n\nKacper Pli\u015B\n\n\nKrzysztof
+    Kr\xF3wka\nPatryk Duda\n\n\ncampfire font\nlemonmilk font\n\n\nunity\nsoundtrap\nsoundly\n\n\n\n\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
-  m_sharedMaterial: {fileID: -1658477906970328267, guid: 237776e323aa609469c0008a2daab3e4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3832,7 +3832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &6982339325358340492
 Animator:
   serializedVersion: 4
