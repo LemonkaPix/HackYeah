@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0776bed3ff6b6b4d841652519f63806, type: 3}
+  m_Name: playerData
+  m_EditorClassIdentifier: 
+  currency: 44
+  baseHealth: 100
+  maxbaseHealth: 100
+  time: 37
+  upgrade: 0
+  totalCurrency: 0
+  totalBabyKilled: 0
+  totalAFKilled: 0
+  totalAMKilled: 0
+  totalTankyKilled: 0
+  totalKingsKilled: 0
+  Fullscreen: 1
+  volume: 50
+  maxVolume: 100

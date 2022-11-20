@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
 
     public GameObject SettingsScreen;
     public GameObject CreditsScreen;
+    public AudioSource audio;
 
     IEnumerator ChangeState(int type)
     {
@@ -26,12 +28,23 @@ public class MenuController : MonoBehaviour
         }
     }
 
+
+    IEnumerator PlayIEnum()
+    {
+        transform.Find("BlackScreen").GetComponent<Animator>().Play("ScreenFade");
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Intro");
+    }
+
     public void Play()
     {
+        StartCoroutine(PlayIEnum());
     }
 
     public void Quit()
     {
+        transform.Find("BlackScreen").GetComponent<Animator>().Play("ScreenFade");
         Application.Quit();
     }
 
@@ -54,15 +67,8 @@ public class MenuController : MonoBehaviour
         StartCoroutine(ChangeState(type));
     }
 
-    void Start()
+    public void playSound()
     {
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audio.Play();
     }
 }
