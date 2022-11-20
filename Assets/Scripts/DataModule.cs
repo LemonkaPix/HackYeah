@@ -136,7 +136,7 @@ public class DataModule : MonoBehaviour
 
     List<GiraffeTypes> GiraffeUPG2 = new List<GiraffeTypes>()
     {
-        new GiraffeTypes(16, 3, 4, 60, 0),
+        new GiraffeTypes(16, 3, 4, 40, 0),
         new GiraffeTypes(26, 6, 2, 60, 40),
         new GiraffeTypes(40, 5, 3, 90, 60),
         new GiraffeTypes(70, 1, 1, 120, 80),

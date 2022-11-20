@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator Die()
     {
-        playerData.currency += 15;
+        playerData.currency += 20;
         isDying = true;
         Destroy(this.gameObject.GetComponent<BoxCollider2D>());
         yield return new WaitForSeconds(0f);

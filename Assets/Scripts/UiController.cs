@@ -200,7 +200,12 @@ public class UiController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(20 - roundTime.Seconds * 0.2f, 30 - roundTime.Seconds * 0.2f));
         GameObject go = Instantiate(lionPrefab, new Vector2(7.5f, -1.75f), Quaternion.identity);
         go.GetComponent<Enemy>().damage += 2 * playerData.upgrade;
-        go.GetComponent<Enemy>().healthPoint += 2 * playerData.upgrade;
+        go.GetComponent<Enemy>().healthPoint += 1.5f * playerData.upgrade;
+        if (playerData.upgrade <= 2)
+        {
+            go.GetComponent<Enemy>().damage *= 0.003f * roundTime.Seconds;
+            go.GetComponent<Enemy>().healthPoint *= 0.003f * roundTime.Seconds;
+        }
         go.transform.parent = GameObject.Find("Lions").transform;
         lionDelay = true;
     }
