@@ -27,18 +27,18 @@ public class Enemy : MonoBehaviour
         healthPoint = girrafeObject.HealthPoint;
         damage = girrafeObject.Damage;
         speed = girrafeObject.Speed;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         onCollider = true;
         fightingGameObject = collision.gameObject;
-        anim.SetBool("IsAttacking", true);
+        //anim.SetBool("IsAttacking", true);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        anim.SetBool("IsAttacking", false);
+        //anim.SetBool("IsAttacking", false);
         onCollider = false;
     }
 
