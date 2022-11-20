@@ -23,6 +23,7 @@ public class Girrafe : MonoBehaviour
     [SerializeField] GameObject slider;
     Animator anim;
     List<GiraffeTypes> currentGiraffeUpgrade;
+    [SerializeField] AudioSource source;
 
 
     #region colliders
@@ -78,6 +79,7 @@ public class Girrafe : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         attackDelay = true;
+        source.Play();
     }
     IEnumerator Die()
     {
