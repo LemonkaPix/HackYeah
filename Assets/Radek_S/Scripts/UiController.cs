@@ -53,7 +53,6 @@ public class UiController : MonoBehaviour
                 text.text = $"{dataModule.GiraffeUPG[currentUpgrade + 1].cost}";
             }
         }
-        Time.timeScale = 5;
     }
 
     // Update is called once per frame
@@ -182,13 +181,11 @@ public class UiController : MonoBehaviour
 
     IEnumerator TroopIE(int index, int troopCost)
     {
-        buyDelay = false;
-
         playerData.currency -= troopCost;
         GameObject go = Instantiate(girrafeObjects[index].prefab, new Vector2(-7.5f, -1.75f), Quaternion.identity);
         go.transform.parent = GameObject.Find("Giraffes").transform;
-        yield return new WaitForSeconds(1);
         buyDelay = true;
+        yield return new WaitForSeconds(0);
     }
 
     public void troop(int index) 
@@ -200,7 +197,7 @@ public class UiController : MonoBehaviour
 
     IEnumerator SummonLion()
     {
-        yield return new WaitForSeconds(Random.RandomRange(20 - roundTime.Seconds * 0.5f, 30 - roundTime.Seconds * 0.5f));
+        yield return new WaitForSeconds(Random.RandomRange(20 - roundTime.Seconds * 0.2f, 30 - roundTime.Seconds * 0.2f));
         GameObject go = Instantiate(lionPrefab, new Vector2(7.5f, -1.75f), Quaternion.identity);
         go.GetComponent<Enemy>().damage += 2 * playerData.upgrade;
         go.GetComponent<Enemy>().healthPoint += 2 * playerData.upgrade;
