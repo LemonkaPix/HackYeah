@@ -85,7 +85,7 @@ public class MenuControl : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 
     private void Update()
