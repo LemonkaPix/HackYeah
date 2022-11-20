@@ -5,7 +5,7 @@ using UnityEngine;
 public class DataReset : MonoBehaviour
 {
     [SerializeField] PlayerData playerData;
-    void Start()// Resetting data
+    public void reload()// Resetting data
     {
         // Main
         playerData.currency = 0;
@@ -27,6 +27,9 @@ public class DataReset : MonoBehaviour
     }
 
 
-
+    private void Awake()
+    {
+        reload();
+    }
 
 }

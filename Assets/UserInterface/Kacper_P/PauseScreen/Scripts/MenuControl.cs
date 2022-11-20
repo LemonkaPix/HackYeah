@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Animator Settinganim;
     [SerializeField] GameObject settingmenu;
     public GameObject menu;
-    public bool isOpened = false; // menu opened?
+    public bool isOpened = false;
     bool debounce = false;
     bool settingsOpened = false;
 
@@ -57,16 +58,23 @@ public class MenuControl : MonoBehaviour
     }
 
     // Wrappers
-    public void PauseButtonWrapper() // Wrapper for the UI button
+    public void ClosePauseWrapper() // Wrapper for the UI button
     {
-        if(!isOpened && !debounce) StartCoroutine(OpenMenu());
-        if(isOpened && !debounce) StartCoroutine(CloseMenu());
+        if (!debounce) StartCoroutine(CloseMenu());
     }
 
+    public void OpenPauseWrapper()
+    {
+        if (!debounce && !isOpened)
+        {
+            StartCoroutine(OpenMenu());
+        }
+        else if (!debounce) StartCoroutine(CloseMenu());
+    }
 
     public void CloseSettingsWrapper()
     {
-        if(!debounce) StartCoroutine(CloseSettings());
+        if (!debounce) StartCoroutine(CloseSettings());
     }
 
     // Functions
@@ -77,19 +85,19 @@ public class MenuControl : MonoBehaviour
 
     public void Quit()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(key))
+        if (Input.GetKeyDown(key))
         {
-            if(settingsOpened && !debounce) StartCoroutine(CloseSettings());
+            if (settingsOpened && !debounce) StartCoroutine(CloseSettings());
             else if (!isOpened && !debounce)
             {
                 StartCoroutine(OpenMenu());
             }
-            else if(!debounce)
+            else if (!debounce)
             {
                 StartCoroutine(CloseMenu());
             }
